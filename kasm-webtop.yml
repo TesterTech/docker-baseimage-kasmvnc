@@ -1,0 +1,26 @@
+version: "2.1"
+services:
+  webtop:
+    image: ghcr.io/linuxserver/baseimage-kasmvnc:fedora39
+    container_name: kasm-webtop
+    security_opt:
+      - seccomp:unconfined #optional
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+      - SUBFOLDER=/ #optional
+      - TITLE=Webtop #optional
+    volumes:
+      - ./home_directory:/config
+      # - ./Pictures:/config/Pictures
+      # - ./i3config:/config/.config/
+      # - ./scripts/:/custom-cont-init.d:ro
+      #- /var/run/docker.sock:/var/run/docker.sock #optional
+    ports:
+      - 3000:3000
+      - 3001:3001
+    devices:
+      - /dev/dri:/dev/dri #optional
+    shm_size: "1gb" #optional
+    restart: unless-stopped
