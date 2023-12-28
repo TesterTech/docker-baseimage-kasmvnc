@@ -13,8 +13,8 @@ services:
       - TITLE=Webtop #optional
     volumes:
       - ./home_directory:/config
-      # - ./Pictures:/config/Pictures
-      # - ./i3config:/config/.config/
+      - ./Pictures:/config/Pictures
+      - ./i3config:/config/.config/
       # - ./scripts/:/custom-cont-init.d:ro
       #- /var/run/docker.sock:/var/run/docker.sock #optional
     ports:

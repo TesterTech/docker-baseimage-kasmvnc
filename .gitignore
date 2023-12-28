@@ -1,1 +1,19 @@
 .jenkins-external
+home_directory/
+!home_directory/.cache/wal/*
+!home_directory/.Xresources
+i3config/chromium/
+i3config/neofetch/
+i3config/openbox/
+i3config/procps/
+i3config/pulse/
+i3config/session/
+i3config/wal/
+i3config/xfce4/
+
+#specific files in config dir
+i3config/baloofileinformationrc
+i3config/dolphinrc
+i3config/knfsshare
+i3config/user-dirs.dirs
+i3config/user-dirs.locale
