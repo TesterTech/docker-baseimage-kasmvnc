@@ -7,7 +7,7 @@ ARG VERSION
 LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DATE}"
 LABEL maintainer="thelamer"
 
-USER root
+# USER root
 
 RUN \
   echo "**** install packages ****" && \
@@ -19,26 +19,26 @@ RUN \
     feh \
     python3-pip \
     ImageMagick \ 
-    polybar \ 
-    picom \ 
-    xrdb \ 
-    rofi \ 
-    dunst \ 
-    git \
-    wget \
-    qt5ct \
-    xfce4-power-manager \ 
-    chromium \
-    vim-enhanced \
-    dolphin \
-    NetworkManager \ 
-    neofetch \ 
-    xrandr \ 
-    pavucontrol \ 
-    psmisc \
-    firefox \
-    dolphin \
-    kate \
+    # polybar \ 
+    # picom \ 
+    # xrdb \ 
+    # rofi \ 
+    # dunst \ 
+    # git \
+    # wget \
+    # qt5ct \
+    # xfce4-power-manager \ 
+    # chromium \
+    # vim-enhanced \
+    # dolphin \
+    # NetworkManager \ 
+    # neofetch \ 
+    # xrandr \ 
+    # pavucontrol \ 
+    # psmisc \
+    # firefox \
+    # dolphin \
+    # kate \
     && \
     pip install pywal 
 

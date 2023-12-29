@@ -1,7 +1,7 @@
 version: "2.1"
 services:
   webtop:
-    image: ghcr.io/linuxserver/baseimage-kasmvnc:fedora39
+    image: kasmvnc-custom:fedora39
     container_name: kasm-webtop
     security_opt:
       - seccomp:unconfined #optional
