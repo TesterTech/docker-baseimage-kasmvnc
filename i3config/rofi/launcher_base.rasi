@@ -13,7 +13,7 @@ prompt {
 	padding: 						10px;
 	background-color: 				@background-alt;
 	text-color: 					@primary;
-	font:							"Iosevka Nerd Font 10";
+	font:							"Noto Sans 14";
 }
 
 entry {

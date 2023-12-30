@@ -7,7 +7,7 @@
 * {
     background-color:       @background;
     text-color:             @foreground;
-    font:				 	"Iosevka Nerd Font 18";
+    font:				 	"Noto Sans 14";
 }
 
 window {

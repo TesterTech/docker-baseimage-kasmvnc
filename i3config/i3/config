@@ -47,7 +47,7 @@ bindsym $mod+Shift+q kill
 bindsym $mod+Shift+n exec nmcli -g SSID device wifi | rofi -dmenu -i -p "Wifi network" -no-custom -theme $ROFI_THEMES_FOLDER/launcher.rasi
 
 # start rofi dmenu (a program launcher)
-bindsym $mod+d $exe rofi -show drun -theme $ROFI_THEMES_FOLDER/launcher_side.rasi
+bindsym $mod+d $exe rofi -show drun -theme $ROFI_THEMES_FOLDER/launcher_base.rasi
 
 #polybar restart 
 bindsym $mod+Mod1+r $exe $HOME/scripts/polybarlaunch --hack && dunstify "reload polybar"
