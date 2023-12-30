@@ -19,23 +19,22 @@ RUN \
     feh \
     python3-pip \
     ImageMagick \ 
-    # polybar \ 
-    # picom \ 
-    # xrdb \ 
-    # rofi \ 
-    # dunst \ 
-    # git \
-    # wget \
+    vim-enhanced \
+    psmisc \
+    picom \ 
+    rofi \ 
+    polybar \ 
+    dunst \ 
+    xrdb \ 
+    git \
+    wget \
+    chromium \
+    xrandr \ 
+    pavucontrol \ 
     # qt5ct \
     # xfce4-power-manager \ 
-    # chromium \
-    # vim-enhanced \
-    # dolphin \
     # NetworkManager \ 
     # neofetch \ 
-    # xrandr \ 
-    # pavucontrol \ 
-    # psmisc \
     # firefox \
     # dolphin \
     # kate \
