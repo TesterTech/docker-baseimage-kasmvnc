@@ -1,6 +1,7 @@
 version: "2.1"
 services:
   webtop:
+    # image: kasmvnc-custom:fedora39
     image: kasmvnc-custom:fedora39
     container_name: kasm-webtop
     security_opt:
@@ -15,7 +16,7 @@ services:
       - ./home_directory:/config
       - ./Pictures:/config/Pictures
       - ./i3config:/config/.config/
-      # - ./scripts/:/custom-cont-init.d:ro
+      - ./scripts/:/custom-cont-init.d:ro
       #- /var/run/docker.sock:/var/run/docker.sock #optional
     ports:
       - 3000:3000

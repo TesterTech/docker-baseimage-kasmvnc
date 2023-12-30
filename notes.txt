@@ -1,0 +1,117 @@
+https://hub.docker.com/r/linuxserver/webtop
+
+
+compose
+---
+version: "2.1"
+services:
+  webtop:
+    image: lscr.io/linuxserver/webtop:fedora-i3
+    container_name: webtop
+    security_opt:
+      - seccomp:unconfined #optional
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+      - SUBFOLDER=/ #optional
+      - TITLE=Webtop #optional
+    volumes:
+      - /path/to/data:/config
+      - /var/run/docker.sock:/var/run/docker.sock #optional
+    ports:
+      - 3000:3000
+      - 3001:3001
+    devices:
+      - /dev/dri:/dev/dri #optional
+    shm_size: "1gb" #optional
+    restart: unless-stopped
+
+--
+
+Local build 
+
+git clone https://github.com/linuxserver/docker-webtop.git
+cd docker-webtop
+docker build \
+  --no-cache \
+  --pull \
+  -t lscr.io/linuxserver/webtop:fedora-i3 .
+
+  --
+
+#!/bin/bash
+sudo dnf update
+cd /tmp
+git clone https://github.com/TesterTech/rice-i3-from-scratch-pywal.git 
+mv rice-i3-from-scratch-pywal rice 
+cd /config 
+cp -rf /tmp/rice/scripts/ ./
+cp -rf /tmp/rice/ImageBrowser ./scripts
+cp -rf /tmp/rice/dot_config/*  ./.config 
+cp -rf /tmp/rice/dot_local/*  ./.local
+rm -fr /tmp/rice/
+
+sudo dnf install -y python3-pip ImageMagick rofi dunst polybar 
+pip install pywal
+
+
+- old
+sudo dnf update
+git clone https://github.com/TesterTech/rice-i3-from-scratch-pywal.git 
+cd rice-i3-from-scratch-pywal 
+cp -rf scripts/ /config/
+cp -rf ImageBrowser /config/scripts
+cp -rf dot_config/*  /config/.config 
+cp -rf dot_local/*  /config/.local
+
+sudo dnf install -y python3-pip ImageMagick rofi dunst polybar 
+pip install pywal
+
+--
+
+Links
+https://hub.docker.com/r/linuxserver/webtop
+https://github.com/linuxserver/docker-webtop/tree/fedora-i3
+https://github.com/linuxserver/docker-webtop/blob/fedora-i3/Dockerfile
+https://github.com/linuxserver/docker-baseimage-kasmvnc
+https://github.com/TesterTech/rice-i3-from-scratch-pywal
+https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry
+https://github.com/just-containers/s6-overlay
+https://github.com/linuxserver/docker-baseimage-alpine/blob/master/root/etc/s6-overlay/s6-rc.d/init-custom-files/run
+https://stackoverflow.com/questions/73879886/how-to-list-all-images-from-an-account-in-github-container-registry
+
+https://github.com/ryanoasis/nerd-fonts/releases
+
+
+--
+
+
+2:00 
+docker-mods 
+github.com/linuxserver/docker-mods/ 
+Dockerfile.complex 
+rclone (deb)
+
+2:40 
+open up wsl 
+
+
+5:00 
+layers 
+
+show docker desktop 
+show Dockerfile, try to match 
+
+9:10 
+ghrc.io 
+
+trying to compare some dockerfiles to the docker-desktop log showing layers
+
+12:50
+looking at the ghcr documentation 
+
+trying docker inspect, image not fount. 
+
+18:00
+personal acces tokens
