@@ -15,6 +15,7 @@ RUN \
     i3 \ 
     i3status \ 
     xfce4-terminal \
+    thunar \ 
     dmenu \
     feh \
     python3-pip \
@@ -23,20 +24,20 @@ RUN \
     psmisc \
     picom \ 
     rofi \ 
-    polybar \ 
+    # polybar \ 
     dunst \ 
     xrdb \ 
     git \
     wget \
     chromium \
-    xrandr \ 
     pavucontrol \ 
+    dolphin \
+    xrandr \ 
     # qt5ct \
     # xfce4-power-manager \ 
     # NetworkManager \ 
     # neofetch \ 
     # firefox \
-    # dolphin \
     # kate \
     && \
     pip install pywal 

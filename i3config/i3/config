@@ -11,6 +11,7 @@
 set $HOME /config
 set $exe exec --no-startup-id
 set $ROFI_THEMES_FOLDER $HOME/.config/rofi
+set $WALLPAPER $HOME/Pictures/Dunes.jpg
 font pango:Terminus 10px 
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
@@ -50,7 +51,7 @@ bindsym $mod+Shift+n exec nmcli -g SSID device wifi | rofi -dmenu -i -p "Wifi ne
 bindsym $mod+d $exe rofi -show drun -theme $ROFI_THEMES_FOLDER/launcher_base.rasi
 
 #polybar restart 
-bindsym $mod+Mod1+r $exe $HOME/scripts/polybarlaunch --hack && dunstify "reload polybar"
+#bindsym $mod+Mod1+r $exe $HOME/scripts/polybarlaunch --hack && dunstify "reload polybar"
 
 
 # change focus
@@ -190,23 +191,21 @@ bindsym XF86MonBrightnessUp exec brightnessctl s +100
 ##############
 # screen layouts
 ##############
-bindsym $mod+Control+d $exe $HOME/scripts/select-screenlayout.sh 
+# bindsym $mod+Control+d $exe $HOME/scripts/select-screenlayout.sh 
 
 ##############
 # autostart programs
 ##############
 
 $exe compton -b --config $HOME/.config/picom/picom.conf
-$exe wal -i $HOME/Pictures/Dunes.jpg
-#$exe feh --randomize --bg-fill  $HOME/Pictures/*
+$exe wal -i $WALLPAPER -n
+#$exe feh --randomize --bg-fill $WALLPAPER
 #$exe $HOME/scripts/setwall.sh
 $exe $HOME/.config/polybar/launch.sh --hack &
-# $exe flatpak run com.github.hluk.copyq &
-$exe nm-applet &
-# password prompt - tested on opensuse
-$exe /usr/lib64/libexec/polkit-kde-authentication-agent-1 &
 $exe dunst &
 $exe xfce4-power-manager &
+# password prompt - tested on opensuse
+#$exe /usr/lib64/libexec/polkit-kde-authentication-agent-1 &
 
 # Gaps if no i3-GAPS, comment this out!
 gaps inner 10

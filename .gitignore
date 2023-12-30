@@ -11,6 +11,8 @@ i3config/session/
 i3config/wal/
 i3config/kde.org/
 i3config/katerc
+i3config/Thunar
+i3config/xfce4/xfconf/xfce-perchannel-xml/thunar.xml
 
 #specific files in config dir
 i3config/baloofileinformationrc
